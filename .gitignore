@@ -1,0 +1,10 @@
+# IDEs
+.idea
+
+# Development
+devel
+ve-*
+
+# compiled
+__pycache__/
+*.py[c]
