@@ -14,11 +14,6 @@ def register():
     return jsonify('register()'), 201
 
 
-@mod.route('/<token>', methods=['PUT'])
-def update(token):
-    return jsonify("update({})".format(token)), 201
-
-
 @mod.route('/<token>/send_message', methods=['POST'])
 def send_message(token):
     return jsonify("send_message({})".format(token)), 204
