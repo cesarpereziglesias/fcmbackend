@@ -9,11 +9,11 @@ mod = Blueprint('fcm', __name__)
 
 @mod.route('/', methods=['POST'])
 @parse_body(SCHEMA_BODY_REGISTER)
-def register():
-    fcm_controller.register()
+def register(body_params):
+    fcm_controller.register(body_params.get('identifier'), body_params.get('token'))
     return jsonify('register()'), 201
 
 
-@mod.route('/<token>/send_message', methods=['POST'])
-def send_message(token):
-    return jsonify("send_message({})".format(token)), 204
+@mod.route('/<identifier>/send_message', methods=['POST'])
+def send_message(identifier):
+    return jsonify("send_message({})".format(identifier)), 204

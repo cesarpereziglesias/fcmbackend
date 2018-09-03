@@ -1,2 +1,2 @@
-def register(id, token):
+def register(identifier, token):
     return ""
